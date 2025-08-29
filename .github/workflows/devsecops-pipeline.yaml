@@ -38,8 +38,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Setup java jdk
+        uses: actions/setup-java@v5.0.0
+      
       - name: Build Docker Image
-        run: docker build -t myapp:latest .
+        run: docker build -t teeghaction-react:latest .
 
       - name: Run Trivy
         uses: aquasecurity/trivy-action@0.12.0
